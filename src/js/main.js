@@ -134,9 +134,9 @@ TREE_CONTAINER.addEventListener('click', (e) => {
 	// 	setTimeout(() => {
 	// 		BST.remove(e.target.innerHTML);
 	// 		TREE_CONTAINER.innerHTML = '';
-	// 	  BST.renderTree(TREE_CONTAINER);
+	// 	  BST.renderTree(TREE_CONTAINER); ==============>>>>>> FOR REMOVE ANIMATION <<<<<<<===============
 	// }, 1000);
-	// FOR REMOVE ANIMATION
+
 		BST.remove(e.target.innerHTML);
 		TREE_CONTAINER.innerHTML = '';
 	  BST.renderTree(TREE_CONTAINER);
