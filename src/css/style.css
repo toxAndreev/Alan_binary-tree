@@ -1,0 +1,23 @@
+@keyframes highlight{0% {background: #fff} 100% {background: #3aebca}}
+
+.mainDiv {
+display: inline-table;
+width: 50%;
+}
+.nodeDiv {
+width: 50%;
+margin: auto;
+border-bottom: 1px black solid;
+}
+.nodeDiv > div {
+border: 1px black solid;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+margin: auto;
+text-align: center;
+}
+.nodeDiv.highlight > div {
+animation: highlight 2s linear;
+animation-fill-mode: forwards;
+}
