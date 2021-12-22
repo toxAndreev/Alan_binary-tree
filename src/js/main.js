@@ -58,7 +58,7 @@ class BinarySearchTree {
 			rightDiv.classList.add('mainDiv');
 
 			const nodeDiv = document.createElement('div');
-			nodeDiv.innerHTML = `<div>${node.data}</div>`;
+			nodeDiv.innerHTML = `<div id="node-data">${node.data}</div>`;
 			nodeDiv.classList.add('nodeDiv');
 			if (node.data === highlight) {
 				nodeDiv.classList.add('highlight');
@@ -97,9 +97,9 @@ class BinarySearchTree {
 			return node.left;
 		}
 		const newNode = this.minNode(node.right);
-		// node.data = newNode.data;
-		newNode.right = this.removeNode(node.right, newNode.data);
-		return newNode;
+		node.data = newNode.data;
+		node.right = this.removeNode(node.right, newNode.data);
+		return node;
 	}
 }
 
@@ -109,6 +109,7 @@ BST.insert(7);
 BST.insert(9);
 BST.insert(15);
 BST.insert(6);
+
 console.log(BST);
 BST.renderTree(TREE_CONTAINER);
 
@@ -125,5 +126,20 @@ document.addEventListener('keydown', (e) => {
   	TREE_CONTAINER.innerHTML = '';
   	BST.renderTree(TREE_CONTAINER, num);
   }
+});
+
+TREE_CONTAINER.addEventListener('click', (e) => {
+	if (e.target.id == "node-data") {
+	// 	e.target.classList.add('remove');
+	// 	setTimeout(() => {
+	// 		BST.remove(e.target.innerHTML);
+	// 		TREE_CONTAINER.innerHTML = '';
+	// 	  BST.renderTree(TREE_CONTAINER);
+	// }, 1000);
+	// FOR REMOVE ANIMATION
+		BST.remove(e.target.innerHTML);
+		TREE_CONTAINER.innerHTML = '';
+	  BST.renderTree(TREE_CONTAINER);
+	}
 });
 

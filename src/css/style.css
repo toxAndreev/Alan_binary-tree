@@ -1,23 +1,37 @@
 @keyframes highlight{0% {background: #fff} 100% {background: #3aebca}}
+/*@keyframes remove{0% {transform: scale(1.0)} 20% {transform: scale(1.2)} 40% {transform: scale(1.0)} 60% {transform: scale(1.2)} 80% {transform: scale(1.0)} 100% {transform: scale(1.4); background: #f44336;}}*/
 
 .mainDiv {
-display: inline-table;
-width: 50%;
+	display: inline-table;
+	width: 50%;
 }
 .nodeDiv {
-width: 50%;
-margin: auto;
-border-bottom: 1px black solid;
+	width: 50%;
+	margin: auto;
+	border-bottom: 1px black solid;
 }
 .nodeDiv > div {
-border: 1px black solid;
-border-radius: 50%;
-width: 30px;
-height: 30px;
-margin: auto;
-text-align: center;
+	border: 1px black solid;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	margin: auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .nodeDiv.highlight > div {
-animation: highlight 2s linear;
-animation-fill-mode: forwards;
+	animation: highlight 1s linear;
+	animation-fill-mode: forwards;
 }
+.nodeDiv > div:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	transition: 0.1s linear;
+	background: #ffeb3ba6;
+}
+/*.remove {
+	animation: remove 1s linear;
+	animation-fill-mode: forwards;
+}*/
